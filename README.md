@@ -1,4 +1,4 @@
-# Decorize
+# Nome do Projeto: Decorize
 
 # Participantes: Ian Erfurt Rezende, Isadora Garcia de Melo Silva, Kayllan Kaiki Silva Macedo, Pedro Ataides Comastri e Victor Alexander de Noronha Rodrigues.
 
