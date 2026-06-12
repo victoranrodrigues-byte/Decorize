@@ -1,12 +1,16 @@
 # Nome do Projeto: Decorize
 
-# Participantes: Ian Erfurt Rezende, Isadora Garcia de Melo Silva, Kayllan Kaiki Silva Macedo, Pedro Ataides Comastri e Victor Alexander de Noronha Rodrigues.
+# Participantes: 
+Ian Erfurt Rezende, Isadora Garcia de Melo Silva, Kayllan Kaiki Silva Macedo, Pedro Ataides Comastri e Victor Alexander de Noronha Rodrigues.
 
-#  Stack Front End: HTML, CSS, JS, Figma.
+#  Stack Front End: 
+HTML, CSS, JS, Figma.
 
-#  Stack Back End: Python, PHP.
+#  Stack Back End: 
+Python, PHP.
 
-#  Stack Banco de Dados: SQL.
+#  Stack Banco de Dados: 
+SQL.
 
 #  Descrição do Decorize: 
 O decorize é um aplicativo que busca ajudar o público que pretende reformar ou mudar de moradia.
