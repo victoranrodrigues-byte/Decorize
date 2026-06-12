@@ -8,8 +8,7 @@
 
 #  Stack Banco de Dados: SQL.
 
-#  Descrição: 
-# Decorize: 
+#  Descrição do Decorize: 
 O decorize é um aplicativo que busca ajudar o público que pretende reformar ou mudar de moradia.
 O aplicativo é baseado em escanear o ambiente em que a pessoa se encontra e colocá-la dentro do APP, de uma forma 2D, editável, assim permitindo a personalização do ambiente na forma que o que está editando possa personalizar o ambiente na forma que deseja.
 
