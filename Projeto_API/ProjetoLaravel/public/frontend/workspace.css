@@ -1,0 +1,148 @@
+.workspace-hero{ padding: 56px 0 40px; }
+.workspace-hero .eyebrow{ color: var(--signal); }
+.workspace-hero h1{
+  margin-top: 16px;
+  font-size: clamp(28px, 3.4vw, 40px);
+  color: var(--chalk);
+}
+.workspace-hero p{
+  margin-top: 14px;
+  max-width: 60ch;
+  color: var(--chalk-dim);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.workspace-main{ padding: 48px 0 100px; }
+
+.tabs{
+  display: flex; flex-wrap: wrap; gap: 6px;
+  border-bottom: 1px solid var(--paper-line);
+  margin-bottom: 32px;
+}
+.tab-btn{
+  background: none; border: 1px solid transparent; border-bottom: none;
+  padding: 11px 18px;
+  font-family: var(--font-mono); font-size: 13px; letter-spacing: .02em;
+  color: var(--ink-dim);
+  border-radius: var(--radius) var(--radius) 0 0;
+  transform: translateY(1px);
+}
+.tab-btn:hover{ color: var(--blueprint); }
+.tab-btn.is-active{
+  color: var(--blueprint);
+  background: var(--paper-raised);
+  border-color: var(--paper-line);
+  font-weight: 600;
+}
+
+.tab-panel{ display: none; }
+.tab-panel.is-active{ display: block; }
+
+.panel-head{
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 20px; flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.panel-head h2{ font-size: 22px; color: var(--blueprint); }
+.panel-head p{ margin-top: 4px; color: var(--ink-dim); font-size: 13.5px; max-width: 52ch; }
+
+.resource-form{
+  background: var(--paper-raised);
+  border: 1px solid var(--paper-line);
+  padding: 22px;
+  margin-bottom: 26px;
+}
+.resource-form-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+.form-field{ display: flex; flex-direction: column; gap: 6px; }
+.form-field label{
+  font-family: var(--font-mono); font-size: 11.5px;
+  color: var(--ink-dim); letter-spacing: .04em;
+}
+.form-field input, .form-field select, .form-field textarea{
+  font-family: var(--font-body); font-size: 14px;
+  padding: 9px 11px;
+  border: 1px solid var(--paper-line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink);
+}
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus{
+  outline: none; border-color: var(--blueprint);
+}
+.form-field textarea{ resize: vertical; }
+
+.form-errors{
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: rgba(192,80,58,.08);
+  border: 1px solid rgba(192,80,58,.3);
+  color: var(--danger);
+  font-size: 13px;
+  list-style: disc;
+  padding-left: 34px;
+}
+
+.resource-form-actions{
+  display: flex; gap: 12px;
+  margin-top: 20px;
+}
+.resource-form-actions .btn{ padding: 10px 20px; font-size: 13px; }
+
+.table-wrap{ overflow-x: auto; }
+.data-table{
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--paper-line);
+  background: var(--paper-raised);
+}
+.data-table th{
+  text-align: left;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  padding: 12px 16px;
+  background: var(--paper);
+  border-bottom: 1px solid var(--paper-line);
+}
+.data-table td{
+  padding: 13px 16px;
+  border-top: 1px solid var(--paper-line);
+  font-size: 13.5px;
+  color: var(--ink);
+  vertical-align: middle;
+}
+.data-table tr:first-child td{ border-top: none; }
+.col-actions{ white-space: nowrap; text-align: right; }
+.empty-row td{ color: var(--ink-dim); font-style: italic; }
+
+.row-badge{
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--blueprint);
+  border: 1px solid rgba(11,61,102,.25);
+  padding: 3px 9px;
+}
+
+.row-btn{
+  font-family: var(--font-mono); font-size: 12px;
+  background: none; border: 1px solid rgba(11,61,102,.3);
+  color: var(--blueprint);
+  padding: 5px 10px;
+  border-radius: var(--radius);
+  margin-left: 6px;
+}
+.row-btn:hover{ background: rgba(11,61,102,.06); }
+.row-btn-danger{ border-color: rgba(192,80,58,.35); color: var(--danger); }
+.row-btn-danger:hover{ background: rgba(192,80,58,.08); }
+
+@media (max-width: 760px){
+  .data-table, .data-table tbody, .data-table tr, .data-table td{ display: block; width: auto !important; }
+  .data-table thead{ display: none; }
+  .data-table tr{ padding: 12px 16px; border-top: 1px solid var(--paper-line); }
+  .data-table td{ border: none; padding: 4px 0; }
+  .col-actions{ text-align: left; padding-top: 10px !important; }
+}

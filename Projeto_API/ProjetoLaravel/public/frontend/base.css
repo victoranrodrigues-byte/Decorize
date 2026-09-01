@@ -1,0 +1,191 @@
+/* ==========================================================================
+   TRAÇO — base de estilo compartilhada
+   Identidade: prancheta de desenho técnico. Fundo azul-prancheta com grade,
+   cartões em tom de papel, anotações em fonte mono como se fossem cotas de
+   desenho (medidas, coordenadas, ângulos) — refletindo os próprios dados do
+   produto (posição x/y/z, rotação, escala, largura, altura...).
+   ========================================================================== */
+
+:root{
+  --blueprint:      #0B3D66;
+  --blueprint-mid:  #0F4E80;
+  --blueprint-deep: #082D4D;
+  --grid-line:      rgba(255,255,255,.08);
+  --grid-line-strong: rgba(255,255,255,.16);
+
+  --paper:      #F6F1E7;
+  --paper-raised: #FFFDF8;
+  --paper-line: #E1D6BE;
+  --ink:        #16232E;
+  --ink-dim:    #4B5A66;
+
+  --chalk:      #EAF3FC;
+  --chalk-dim:  rgba(234,243,252,.64);
+
+  --signal:     #E8A33D;
+  --signal-ink: #4A2E06;
+  --moss:       #3C6E58;
+  --danger:     #C0503A;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body:    "IBM Plex Sans", sans-serif;
+  --font-mono:    "IBM Plex Mono", monospace;
+
+  --radius: 2px;
+  --container: 1180px;
+}
+
+*, *::before, *::after{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+img{ max-width: 100%; display: block; }
+a{ color: inherit; text-decoration: none; }
+ul{ margin: 0; padding: 0; list-style: none; }
+h1,h2,h3,h4{ font-family: var(--font-display); margin: 0; line-height: 1.08; }
+p{ margin: 0; }
+button{ font-family: inherit; cursor: pointer; }
+
+.wrap{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.eyebrow{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.eyebrow::before{
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+  opacity: .6;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: .02em;
+  border: 1px solid transparent;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+.btn:active{ transform: translateY(1px); }
+
+.btn-signal{
+  background: var(--signal);
+  color: var(--signal-ink);
+  font-weight: 600;
+}
+.btn-signal:hover{ box-shadow: 0 0 0 3px rgba(232,163,61,.28); }
+
+.btn-outline-chalk{
+  border-color: rgba(234,243,252,.4);
+  color: var(--chalk);
+}
+.btn-outline-chalk:hover{ border-color: var(--chalk); background: rgba(234,243,252,.06); }
+
+.btn-outline-ink{
+  border-color: rgba(22,35,46,.3);
+  color: var(--ink);
+}
+.btn-outline-ink:hover{ border-color: var(--ink); background: rgba(22,35,46,.05); }
+
+.blueprint-surface{
+  position: relative;
+  background: linear-gradient(var(--blueprint-deep), var(--blueprint));
+  color: var(--chalk);
+  overflow: hidden;
+}
+.blueprint-surface::before{
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+.blueprint-surface::after{
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--grid-line-strong) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line-strong) 1px, transparent 1px);
+  background-size: 200px 200px;
+  pointer-events: none;
+}
+
+.site-header{
+  position: sticky; top: 0; z-index: 50;
+  background: var(--blueprint-deep);
+  border-bottom: 1px solid var(--grid-line-strong);
+}
+.site-header .wrap{
+  display:flex; align-items:center; justify-content:space-between;
+  height: 76px;
+}
+.brand{
+  display:flex; align-items:center; gap:12px;
+  font-family: var(--font-display);
+  font-size: 20px; font-weight: 600;
+  color: var(--chalk);
+}
+.brand-mark{
+  width: 30px; height: 30px;
+  border: 1.5px solid var(--signal);
+  display:flex; align-items:center; justify-content:center;
+  font-family: var(--font-mono); font-size: 12px; color: var(--signal);
+  transform: rotate(45deg);
+}
+.brand-mark span{ transform: rotate(-45deg); }
+
+.main-nav{ display:flex; align-items:center; gap:36px; }
+.main-nav a{
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--chalk-dim);
+  letter-spacing: .04em;
+  padding: 6px 0;
+  border-bottom: 1px solid transparent;
+  transition: color .15s ease, border-color .15s ease;
+}
+.main-nav a:hover, .main-nav a.is-active{ color: var(--chalk); border-color: var(--signal); }
+
+.nav-actions{ display:flex; align-items:center; gap:14px; }
+
+.site-footer{
+  background: var(--blueprint-deep);
+  color: var(--chalk-dim);
+  padding: 48px 0 28px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+.site-footer .wrap{
+  display:flex; align-items:flex-end; justify-content:space-between;
+  flex-wrap: wrap; gap: 24px;
+  border-top: 1px solid var(--grid-line-strong);
+  padding-top: 24px;
+}
+.site-footer strong{ color: var(--chalk); font-family: var(--font-display); }
+
+@media (max-width: 860px){
+  .main-nav{ display:none; }
+}
